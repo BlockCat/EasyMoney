@@ -1,0 +1,6 @@
+name: EasyMoney
+version: 1.0
+main: me.blockcat.EasyMoney
+commands:
+    money:
+    shop:
