@@ -14,6 +14,7 @@ public class ShopHandler {
 	
 	public static Shop getShop(Location loc) {
 		for (Shop shop : shops) {
+			System.out.println(shop.getOwner());
 			if (shop.inLocation(loc)) {
 				return shop;
 			}
@@ -25,11 +26,18 @@ public class ShopHandler {
 		shops.add(shop);
 	}
 	
+	public static void save() {
+		for (Shop shop : shops) {
+			shop.save();
+		}
+	}
+	
 	public static void load() {
 		File dir = new File(EasyMoney.getInstance().getDataFolder(), "/shops/");
 		
 		for (File file : dir.listFiles()) {
 			if (file.getName().endsWith(".shop")) {
+				System.out.println("adding!");
 				shops.add(new Shop(file));
 			}
 		}

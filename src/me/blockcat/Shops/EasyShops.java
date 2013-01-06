@@ -10,6 +10,11 @@ public class EasyShops {
 		this.plugin = plugin; 
 		plugin.getServer().getPluginManager().registerEvents(new ShopListener(), plugin);
 		plugin.getCommand("shop").setExecutor(new ShopCommandHandler());
+		ShopHandler.load();
+	}
+	
+	public void save() {
+		ShopHandler.save();
 	}
 
 }

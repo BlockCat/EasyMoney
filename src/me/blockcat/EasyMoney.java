@@ -26,7 +26,10 @@ public class EasyMoney extends JavaPlugin{
 		}
 		
 		this.getCommand("money").setExecutor(new MoneyCommandHandler(this));
-		
+	}
+	
+	public void onDisable() {
+		shops.save();
 	}
 	
 	public static EasyMoney getInstance() {
